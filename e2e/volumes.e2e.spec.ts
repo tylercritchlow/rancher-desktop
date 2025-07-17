@@ -186,9 +186,7 @@ test.describe.serial('Volumes Tests', () => {
 
       await expect(volumesPage.errorBanner).toBeVisible();
 
-      const errorMessage = await volumesPage.errorBanner.textContent();
-      expect(errorMessage).toBeTruthy();
-      expect(errorMessage?.toLowerCase()).toContain('volume is in use');
+      await expect(volumesPage.errorBanner).toContainText(/volume is in use/i);
 
       await expect(volumesPage.getVolumeRow(volumeName)).toBeVisible();
 

@@ -252,7 +252,7 @@ export default defineComponent({
           streamOptions.namespace = this.hasNamespaceSelected;
         }
 
-        const streamArgs = ['--follow', '--timestamps', '--tail', '10000', this.containerId];
+        const streamArgs = ['--follow', '--tail', '10000', this.containerId];
 
         this.streamProcess = this.ddClient.docker.cli.exec('logs', streamArgs, streamOptions);
 

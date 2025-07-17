@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="819cfb60-3681-4a46-a542-a48aa86c9b5d" name="Changes" comment="Switch back to locators over data-testid because of merge">
+      <change beforePath="$PROJECT_DIR$/e2e/container-logs.e2e.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/container-logs.e2e.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/volumes.e2e.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/volumes.e2e.spec.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Tyler Critchlow &lt;tylerdarincritchlow@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2zkvHhW5PbgVFduFDyKl44y1MHF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;container-logs-volumes-e2e-tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/tylercritchlow/Github/rancher-desktop/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="819cfb60-3681-4a46-a542-a48aa86c9b5d" name="Changes" comment="apply reviewer suggestions and fixes (list of changes in details)&#10;&#10;- Fix incorrect preference name: application.security.allowedImages → containerEngine.allowedImages&#10;- Use this.table.locator() instead of this.page.locator() for better scoping&#10;- Add type safety for action parameters using union types&#10;- Replace ternary operators with object lookup for action text mapping&#10;- Format timeouts with underscores (e.g., 30_000)&#10;- Remove unnecessary clear() after Escape key in search&#10;- Use Playwright assertions (toHaveValue, toContainText) instead of manual checks&#10;- Change catch to finally for cleanup operations&#10;- Use data-node-id attribute for volume row selection" />
+      <created>1752287800181</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752287800181</updated>
+      <workItem from="1752287801290" duration="26218000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fix scroll and search tests">
+      <option name="closed" value="true" />
+      <created>1752291551679</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752291551679</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix volumes-page actions">
+      <option name="closed" value="true" />
+      <created>1752292618341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752292618341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add many `data-testid`'s and other improvements">
+      <option name="closed" value="true" />
+      <created>1752345238990</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752345238990</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add many `data-testid`'s and other improvements">
+      <option name="closed" value="true" />
+      <created>1752345269265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752345269265</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixes and suggestions for container logs tests">
+      <option name="closed" value="true" />
+      <created>1752544290890</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752544290890</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixes and suggestions for volumes tests + prefer long flags">
+      <option name="closed" value="true" />
+      <created>1752547123978</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752547123978</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixes and reviewer suggestions">
+      <option name="closed" value="true" />
+      <created>1752626495058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752626495058</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Switch back to locators over data-testid because of merge">
+      <option name="closed" value="true" />
+      <created>1752628145223</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1752628145223</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix scroll and search tests" />
+    <MESSAGE value="Fix volumes-page actions" />
+    <MESSAGE value="Add many `data-testid`'s and other improvements" />
+    <MESSAGE value="Fixes and suggestions for container logs tests" />
+    <MESSAGE value="Fixes and suggestions for volumes tests + prefer long flags" />
+    <MESSAGE value="Fixes and reviewer suggestions" />
+    <MESSAGE value="Switch back to locators over data-testid because of merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch back to locators over data-testid because of merge" />
+  </component>
+</project>

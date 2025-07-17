@@ -1,5 +1,4 @@
-import type {ElectronApplication, Page} from '@playwright/test';
-import {expect, test} from '@playwright/test';
+import {ElectronApplication, Page, expect, test} from '@playwright/test';
 
 import {NavPage} from './pages/nav-page';
 import {ContainerLogsPage} from './pages/container-logs-page';
