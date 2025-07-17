@@ -122,6 +122,8 @@ export default defineComponent({
       maxReconnectAttempts: 5,
       searchDebounceTimer: null,
       containerCheckInterval: null,
+      showTimestamps: true,
+      logBuffer: [], // Store log entries with metadata
     };
   },
   computed: {
@@ -150,6 +152,9 @@ export default defineComponent({
     // Don't call initializeLogs here - wait for settings to load
 
     window.addEventListener('keydown', this.handleGlobalKeydown);
+    
+    // Expose component instance for debugging
+    window._containerLogsComponent = this;
   },
   beforeDestroy() {
     this.stopStreaming();
@@ -222,12 +227,35 @@ export default defineComponent({
             onOutput: (data) => {
               if (this.terminal && (data.stdout || data.stderr)) {
                 const output = data.stdout || data.stderr;
+                const timestamp = new Date().toISOString();
+                
+                // Split lines and store with metadata
+                const lines = output.split(/\r?\n/);
+                lines.forEach(line => {
+                  if (line.trim()) {
+                    this.logBuffer.push({
+                      timestamp,
+                      content: line,
+                      type: data.stderr ? 'stderr' : 'stdout'
+                    });
+                  }
+                });
 
                 const buffer = this.terminal.buffer.active;
                 const viewport = this.terminal.rows;
                 const isAtBottom = buffer.viewportY >= buffer.length - viewport;
 
-                this.terminal.write(output);
+                // Format and write to terminal
+                const formattedOutput = lines
+                  .map(line => {
+                    if (line.trim()) {
+                      return this.showTimestamps ? `${timestamp} ${line}` : line;
+                    }
+                    return line;
+                  })
+                  .join('\n');
+
+                this.terminal.write(formattedOutput);
 
                 if (isAtBottom) {
                   this.terminal.scrollToBottom();
@@ -252,7 +280,7 @@ export default defineComponent({
           streamOptions.namespace = this.hasNamespaceSelected;
         }
 
-        const streamArgs = ['--follow', '--timestamps', '--tail', '10000', this.containerId];
+        const streamArgs = ['--follow', '--tail', '10000', this.containerId];
 
         this.streamProcess = this.ddClient.docker.cli.exec('logs', streamArgs, streamOptions);
 
@@ -442,6 +470,30 @@ export default defineComponent({
           this.$refs.searchInput.select();
         }
       }
+    },
+    toggleTimestamps() {
+      this.showTimestamps = !this.showTimestamps;
+      this.redrawTerminal();
+    },
+    redrawTerminal() {
+      if (!this.terminal || this.logBuffer.length === 0) return;
+      
+      // Clear terminal
+      this.terminal.clear();
+      
+      // Redraw all logs with current timestamp setting
+      const output = this.logBuffer
+        .map(entry => {
+          return this.showTimestamps 
+            ? `${entry.timestamp} ${entry.content}` 
+            : entry.content;
+        })
+        .join('\n');
+      
+      this.terminal.write(output + '\n');
+      
+      // Scroll to bottom
+      this.terminal.scrollToBottom();
     },
   },
 });
