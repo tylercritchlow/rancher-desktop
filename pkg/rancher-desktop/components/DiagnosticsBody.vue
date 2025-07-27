@@ -175,7 +175,7 @@ export default defineComponent({
                 }"
                 @click.stop="toggleExpand(group.ref)"
               />
-              {{ group.ref }}
+              {{ group.ref }} ({{ group.rows.length }})
             </div>
           </td>
           <td
@@ -280,7 +280,7 @@ export default defineComponent({
         }
       }
 
-      &:not([aria-expanded]) {
+      &[aria-expanded="false"] {
         :deep(~ .main-row) {
           visibility: collapse;
           .toggle-container {
